@@ -28,7 +28,7 @@ SECRET_KEY = '=zp%ps%%ke4lgkj5)r6l*n$c@u)ob9z_f(h^8jcl1q8bkvlc5k'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-#ALLOWED_HOSTS = ['poet-hub.herokuapp.com']
+ALLOWED_HOSTS = ['poet-hub.herokuapp.com']
 
 
 # Application definition
@@ -124,7 +124,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
-#STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
