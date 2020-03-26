@@ -1,0 +1,77 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+	<link rel="stylesheet" type="text/css" href="{% static 'blog/style.css' %}">
+
+	<link href="https://fonts.googleapis.com/css?family=IM+Fell+Great+Primer:400i&display=swap" rel="stylesheet">
+
+	{% if title %}
+		<title>PoetHub.com - {{ title }}</title>
+	{% else %}
+		<title>PoetHub.com</title>
+	{% endif %}
+
+</head>
+
+<body class="crossfade">
+
+	<header class="site-header">
+	  <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top crossfade">
+	    <div class="container">
+	      <a class="navbar-brand mr-4 logo-font" href="{% url 'blog-home' %}">
+	      	PoetHub.com
+	      </a>
+	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+	      <span class="navbar-toggler-icon"></span>
+	      </button>
+	      <div class="collapse navbar-collapse" id="navbarToggle">
+	        <div class="navbar-nav mr-auto bold-font">
+	          <a class="nav-item nav-link" href="{% url 'blog-home' %}">Home</a>
+	          <a class="nav-item nav-link" href="{% url 'blog-about' %}">About</a>
+	        </div>
+	        <!-- Navbar Right Side -->
+	        <div class="navbar-nav bold-font">
+	          	{% if user.is_authenticated %}
+	          		<a class="nav-item nav-link" href="{% url 'post-create' %}">Publish Poem</a>
+	          		<a class="nav-item nav-link" href="{% url 'profile' %}">Poet Profile</a>
+	          		<a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
+	          	{% else %}
+			     	<a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
+			       	<a class="nav-item nav-link" href="{% url 'register' %}">Register</a>
+				{% endif %}		     	  
+	        </div>
+	      </div>
+	    </div>
+	  </nav>
+	</header>
+
+	<main role="main" class="container">
+	  <div class="row">
+	    <div class="col-md-8">
+	    	{% if messages %}
+	    		{% for message in messages %}
+	    			<div class="alert alert-{{ message.tags }}">
+	    				{{ message }}
+	    			</div>
+	    		{% endfor %}
+	    	{% endif %}	      	
+	      	{% block content %}{% endblock %}	    	
+	    </div>
+	    <div class="col-md-4">
+	      
+	    </div>
+	  </div>
+	</main>
+
+</body>
+</html>
