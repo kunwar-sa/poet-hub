@@ -17,18 +17,18 @@ def home(request):
 		'posts': Post.objects.all(),
 		'title': 'Home Page',
 	}
-	return render(request, 'blog/home.html', context)
+	return render(request, 'poem/home.html', context)
 
 class PostListView(ListView):
 	model = Post
-	template_name = 'blog/home.html'
+	template_name = 'poem/home.html'
 	context_object_name = 'posts'
 	ordering = ['-date_posted']
 	paginate_by = 5
 
 class UserPostListView(ListView):
 	model = Post
-	template_name = 'blog/user_posts.html'
+	template_name = 'poem/user_posts.html'
 	context_object_name = 'posts'
 	
 	paginate_by = 5
@@ -77,7 +77,7 @@ def about(request):
 	context = {
 		'title': 'About Page',
 	}
-	return render(request, 'blog/about.html', context)
+	return render(request, 'poem/about.html', context)
 
 
 

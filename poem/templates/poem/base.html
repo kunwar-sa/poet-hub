@@ -11,7 +11,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-	<link rel="stylesheet" type="text/css" href="{% static 'blog/style.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'poem/style.css' %}">
 
 	<link href="https://fonts.googleapis.com/css?family=IM+Fell+Great+Primer:400i&display=swap" rel="stylesheet">
 
@@ -28,7 +28,7 @@
 	<header class="site-header">
 	  <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top crossfade">
 	    <div class="container">
-	      <a class="navbar-brand mr-4 logo-font" href="{% url 'blog-home' %}">
+	      <a class="navbar-brand mr-4 logo-font" href="{% url 'poem-home' %}">
 	      	PoetHub.com
 	      </a>
 	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
@@ -36,8 +36,8 @@
 	      </button>
 	      <div class="collapse navbar-collapse" id="navbarToggle">
 	        <div class="navbar-nav mr-auto bold-font">
-	          <a class="nav-item nav-link" href="{% url 'blog-home' %}">Home</a>
-	          <a class="nav-item nav-link" href="{% url 'blog-about' %}">About</a>
+	          <a class="nav-item nav-link" href="{% url 'poem-home' %}">Home</a>
+	          <a class="nav-item nav-link" href="{% url 'poem-about' %}">About</a>
 	        </div>
 	        <!-- Navbar Right Side -->
 	        <div class="navbar-nav bold-font">
